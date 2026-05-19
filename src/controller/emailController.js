@@ -38,17 +38,7 @@ const submitForm = async (req, res) => {
     });
 
     // SEND EMAIL (AFTER receiverEmail is ready)
-    await sendMail(
-      name,
-      company,
-      gender,
-      age,
-      email,
-      contactNumber,
-      query,
-      receiverEmail,
-      disposition,
-    );
+    await sendMail(name, company, gender, age, email, query, receiverEmail);
 
     return res.status(200).json({
       success: true,
