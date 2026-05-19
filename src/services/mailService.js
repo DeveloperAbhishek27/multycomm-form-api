@@ -38,9 +38,9 @@ const sendMail = async (
       `,
     });
 
-    console.log("EMAIL SENT SUCCESS ✅");
+    console.log("EMAIL SENT SUCCESS ");
   } catch (error) {
-    console.log("EMAIL ERROR ❌:", error);
+    console.log("EMAIL ERROR :", error);
     throw error;
   }
 };
