@@ -14,7 +14,6 @@ const submitForm = async (req, res) => {
       disposition,
     } = req.body;
 
-    // EMAIL MAP (PEHLE DEFINE KARO)
     const emailMap = {
       "Customer Support": "ayan@multycomm.com",
       "Consultant Support": "akash@multycomm.com",
@@ -25,7 +24,6 @@ const submitForm = async (req, res) => {
 
     const receiverEmail = emailMap[disposition] || process.env.EMAIL_USER;
 
-    // SAVE IN DB
     const savedData = await Form.create({
       name,
       company,
@@ -36,8 +34,7 @@ const submitForm = async (req, res) => {
       query,
       disposition,
     });
-
-    // SEND EMAIL (AFTER receiverEmail is ready)
+    
     await sendMail(
       name,
       company,
